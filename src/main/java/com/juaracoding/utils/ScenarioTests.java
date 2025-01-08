@@ -19,11 +19,12 @@ public enum ScenarioTests {
     T3("Login dengan Username kosong"),
     T4("Login dengan Password kosong"),
     T5("Add to cart"),
-    T6("Successful Checkout"),
-    T7("Checkout Empaty Cart"),
-    T8("Leave the first name section blank"),
-    T9("Leave the last name section blank"),
-    T10("Leave the Zip Code section blank");
+    T6("Remove from cart"),
+    T7("Successful Checkout"),
+    T8("Checkout Empaty Cart"),
+    T9("Leave the first name section blank"),
+    T10("Leave the last name section blank"),
+    T11("Leave the Zip Code section blank");
 
 
     private String scenarioTestName;

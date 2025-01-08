@@ -11,6 +11,7 @@ Version 1.0
 
 import com.juaracoding.pages.LoginPage;
 import com.juaracoding.pages.ProductsPage;
+import com.juaracoding.utils.Utils;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
@@ -44,20 +45,39 @@ public class CartTest {
 
     @When("Click the add to cart button on the first product")
     public void click_the_add_to_cart_button_on_the_first_product(){
+        Utils.delay(2);
         productsPage.clickAddToCart();
         extentTest.log(LogStatus.PASS,"Click the add to cart button on the first product");
     }
 
     @And("Click the add to cart button on the second product")
     public void click_the_add_to_cart_button_on_the_second_product(){
+        Utils.delay(2);
         productsPage.clickAddToCart2();
         extentTest.log(LogStatus.PASS,"Click the add to cart button on the second product");
     }
 
+    @Given("Click button Remove")
+    public void click_button_Remove(){
+        Utils.delay(2);
+        productsPage.clickBtnRemove();
+        extentTest.log(LogStatus.PASS,"Click button Remove");
+    }
+
+    @Then("Removed products are deleted from the cart page")
+    public void removed_products_are_deleted_from_the_cart_page(){
+        Utils.delay(2);
+        Assert.assertEquals(productsPage.getTxtCartBadge(), "1");
+        extentTest.log(LogStatus.PASS,"Removed products are deleted from the cart");
+    }
+
     @Then("The cart icon is marked with a cart badge into 2")
     public void The_cart_icon_is_marked_with_a_cart_badge_into_2(){
+        Utils.delay(2);
         Assert.assertEquals(productsPage.getTxtCartBadge(), "2");
         extentTest.log(LogStatus.PASS,"The cart icon is marked with a cart badge into 2");
     }
+
+
 
 }

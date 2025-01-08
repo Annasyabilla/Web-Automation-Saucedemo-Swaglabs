@@ -10,6 +10,7 @@ Version 1.0
 */
 
 import com.juaracoding.pages.LoginPage;
+import com.juaracoding.utils.Utils;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 import io.cucumber.java.en.And;
@@ -42,36 +43,42 @@ public class LoginTest {
 
     @When("Enter the valid Username")
     public void enter_valid_username() {
+        Utils.delay(2);
         loginPage.username("standard_user");
         extentTest.log(LogStatus.PASS,"Enter the valid Username");
     }
 
     @And("Enter the valid Password")
     public void enter_valid_password() {
+        Utils.delay(2);
         loginPage.password("secret_sauce");
         extentTest.log(LogStatus.PASS,"Enter the valid Password");
     }
 
     @And("Click the login button")
     public void click_login_button() {
+        Utils.delay(2);
         loginPage.setBtnLogin();
         extentTest.log(LogStatus.PASS,"Click the login button");
     }
 
     @When("Enter the wrong Username")
     public void enter_wrong_username() {
+        Utils.delay(2);
         loginPage.username("standard");
         extentTest.log(LogStatus.PASS,"Enter the wrong Username");
     }
 
     @And("Enter the wrong Password")
     public void enter_wrong_password() {
+        Utils.delay(2);
         loginPage.password("sauce");
         extentTest.log(LogStatus.PASS,"Enter the wrong Password");
     }
 
     @When("Leave the Username blank")
     public void leave_the_username_blank() {
+        Utils.delay(2);
         loginPage.clearElementUsername();
         loginPage.username("");
         extentTest.log(LogStatus.PASS,"Leave the Username blank");
@@ -79,6 +86,7 @@ public class LoginTest {
 
     @And("Leave the Password blank")
     public void leave_the_password_blank() {
+        Utils.delay(2);
 //        loginPage.clearElementPassword();
         loginPage.password("");
         extentTest.log(LogStatus.PASS,"Leave the Password blank");
@@ -86,24 +94,28 @@ public class LoginTest {
 
     @Then("user redirected to home page")
     public void user_redirected_to_home_page() {
+        Utils.delay(2);
         Assert.assertEquals(loginPage.getProductsTitle(),"Products");
         extentTest.log(LogStatus.PASS,"user redirected to home page");
     }
 
     @Then("showing error message Username and password do not match")
     public void showing_error_message_username_and_password_do_not_match() {
+        Utils.delay(2);
         Assert.assertEquals(loginPage.getInvLogin(),"Epic sadface: Username and password do not match any user in this service");
         extentTest.log(LogStatus.PASS,"showing error message Username and password do not match");
     }
 
     @Then("showing error message Username is required")
     public void showing_error_message_username_is_required() {
+        Utils.delay(2);
         Assert.assertEquals(loginPage.getNullUsername(),"Epic sadface: Username is required");
         extentTest.log(LogStatus.PASS,"showing error message Username is required");
     }
 
     @Then("showing error message Password is required")
     public void showing_error_message_password_is_required() {
+        Utils.delay(2);
         Assert.assertEquals(loginPage.getNullPassword(),"Epic sadface: Password is required");
         extentTest.log(LogStatus.PASS,"showing error message Password is required");
     }
