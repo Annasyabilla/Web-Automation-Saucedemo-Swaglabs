@@ -6,7 +6,6 @@ This repository contains automation tests for the Sauce Demo website, leveraging
 - Product catalog validation
 - Add-to-cart and remove-from-cart tests
 - End-to-end checkout process testing
-- Google Chrome and ChromeDriver
 
 ## Test Cases
 https://docs.google.com/spreadsheets/d/1-5pRPlaglNCi3X3_xWM4UHWWduzHvasSEu9hnMI56s4/edit?gid=0#gid=0
